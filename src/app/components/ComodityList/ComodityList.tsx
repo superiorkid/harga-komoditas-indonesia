@@ -7,7 +7,7 @@ export const getData = async () => {
   const res = await fetch("https://jibs.my.id/api/harga_komoditas", {
     next: { revalidate: THIRTY_MINUTES },
   });
-  
+
   if (!res.ok) {
     throw new Error("cannot fetch data");
   }
@@ -26,7 +26,7 @@ async function ComodityList() {
           <Link
             key={index}
             href={`/komoditas/${category}`}
-            className="hover:bg-gray-500 p-2 rounded"
+            className="hover:bg-blue-300 hover:text-slate-600 p-2 rounded"
           >
             {category}
           </Link>
